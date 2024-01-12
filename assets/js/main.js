@@ -1,7 +1,6 @@
 (function () {
   "use strict";
 
-  // ======= Sticky
   window.onscroll = function () {
     const ud_header = document.querySelector(".ud-header");
     const sticky = ud_header.offsetTop;
@@ -13,24 +12,23 @@
       ud_header.classList.remove("sticky");
     }
 
-    if(logo.length) {
+    if (logo.length) {
       // === logo change
       if (ud_header.classList.contains("sticky")) {
         document.querySelector(".header-logo").src =
-          "assets/images/logo/logo.svg"
+          "assets/images/logo/dark-logo.png"
       } else {
         document.querySelector(".header-logo").src =
-          "assets/images/logo/logo-white.svg"
+          "assets/images/logo/logo-white.png"
       }
     }
 
     if (document.documentElement.classList.contains("dark")) {
-      if(logo.length) {
-        // === logo change
+      if (logo.length) {
         if (ud_header.classList.contains("sticky")) {
           document.querySelector(".header-logo").src =
-            "assets/images/logo/logo-white.svg"
-        } 
+            "assets/images/logo/logo-white.png"
+        }
       }
     }
 
@@ -46,7 +44,6 @@
     }
   };
 
-  // ===== responsive navbar
   let navbarToggler = document.querySelector("#navbarToggler");
   const navbarCollapse = document.querySelector("#navbarCollapse");
 
@@ -55,7 +52,6 @@
     navbarCollapse.classList.toggle("hidden");
   });
 
-  //===== close navbar-collapse when a  clicked
   document
     .querySelectorAll("#navbarCollapse ul li:not(.submenu-item) a")
     .forEach((e) =>
@@ -65,7 +61,6 @@
       })
     );
 
-  // ===== Sub-menu
   const submenuItems = document.querySelectorAll(".submenu-item");
   submenuItems.forEach((el) => {
     el.querySelector("a").addEventListener("click", () => {
@@ -73,7 +68,6 @@
     });
   });
 
-  // ===== Faq accordion
   const faqs = document.querySelectorAll(".single-faq");
   faqs.forEach((el) => {
     el.querySelector(".faq-btn").addEventListener("click", () => {
@@ -82,10 +76,8 @@
     });
   });
 
-  // ===== wow js
   new WOW().init();
 
-  // ====== scroll top js
   function scrollTo(element, to = 0, duration = 500) {
     const start = element.scrollTop;
     const change = to - start;
@@ -118,7 +110,7 @@
     scrollTo(document.documentElement);
   };
 
-    /* ========  themeSwitcher start ========= */
+  /* ========  themeSwitcher start ========= */
 
   // themeSwitcher
   const themeSwitcher = document.getElementById('themeSwitcher');
